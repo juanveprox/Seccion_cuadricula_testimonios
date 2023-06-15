@@ -1,0 +1,172 @@
+:root{
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    
+    /* ### Neutral */
+    
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*{
+    box-sizing: content-box;
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 81%);
+}
+
+main{
+    width: 90%;
+    margin: 2rem 0;
+    display: grid;
+    row-gap:1.5rem;
+}
+/* -------------------------------Todas las secciones */
+.main__secciones{
+    padding:2rem;
+    border-radius: .5rem;
+}
+
+.secciones__perfil{
+    display: flex;
+    line-height: 1.2rem;
+    margin-bottom: .5rem;
+}
+
+.secciones__perfil img{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+}
+
+.perfil__nombre{
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--White);
+}
+
+.perfil__atributo{
+    font-size: .9rem;
+    color: hsla(0, 0%, 100%, 0.50);
+}
+
+.contenido__titulo{
+    font-size: 1.32rem;
+    font-weight: 500;
+    color: var(--White);
+
+}
+
+.contenido__parrafo{
+    margin-top: 1.4rem;
+    font-size: .89rem;
+    line-height: 1.2rem;
+    color: hsla(0, 0%, 100%, 0.70);
+
+}
+
+/* ---------------------Seccion1--------- */
+
+.main__seccion1{
+    background-color: var(--Moderate-violet);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 0%;
+}
+/* Aplicando seccion1 y seccion4 */
+.seccion1__perfil img,.seccion4__perfil img{
+    border: .2rem solid hsl(263, 70%, 63%); 
+}
+
+
+/* ------------------Seccion2------------------------ */
+
+.main__seccion2{
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+
+/* ----------------Seccion3------------------------ */
+
+.main__seccion3{
+    background-color: var(--White);
+}
+
+/* ----------------Seccion3 y seccion5------------------------ */
+.seccion3__perfil__nombre,.seccion5__perfil__nombre{
+    color: var(--Very-dark-grayish-blue);
+}
+
+.seccion3__perfil__atributo,.seccion5__perfil__atributo{
+    color: hsla(217, 30%, 14%, 0.70);
+}
+
+.seccion3__contenido__titulo,.seccion5__contenido__titulo{
+    color: var(--Very-dark-grayish-blue);
+    
+}
+
+.seccion3__contenido__parrafo,.seccion5__contenido__parrafo{
+    color:hsla(217, 30%, 14%, 0.70);
+}
+
+
+/* ----------------Seccion4------------------------ */
+
+.main__seccion4{
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+/* -----------------Seccion5-------------------- */
+.main__seccion5{
+    background-color: var(--White);
+}
+
+
+@media (min-width:786px){
+    main{
+        display: grid;
+        gap:1.5rem;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,max-content);
+        grid-template-areas: 
+        "seccion1 seccion1 seccion2"
+        "seccion3 seccion4 seccion4"
+        "seccion5 seccion5 seccion5";
+    }
+    .main__seccion1{
+        grid-area: seccion1;
+    }
+    .main__seccion2{
+        grid-area: seccion2;
+    }
+    .main__seccion3{
+        grid-area: seccion3;
+    }
+    .main__seccion4{
+        grid-area: seccion4;
+    }
+    .main__seccion5{
+        grid-area: seccion5;
+    }
+}
+
+@media (min-width:1024px){
+    main{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,max-content);
+        grid-template-areas: 
+        "seccion1 seccion1 seccion2 seccion5"
+        "seccion3 seccion4 seccion4 seccion5";
+    }
+}
